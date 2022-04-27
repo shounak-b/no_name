@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "121320328626",
+    "project_id": "three-for-us",
+    "storage_bucket": "three-for-us.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:121320328626:android:c145c85cc7aaa9112da8ab",
+        "android_client_info": {
+          "package_name": "com.noname.no_name"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "121320328626-4kn6cveq9n6thprm3vqd49fgqrphi84j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpTH-ny0lo8ZOFqgnKxEX-Xmq58B0dTCs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "121320328626-4kn6cveq9n6thprm3vqd49fgqrphi84j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
