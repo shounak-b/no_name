@@ -4,6 +4,9 @@ class UserSharedPref {
   static SharedPreferences? sharedPreferences;
   static const String _uidKey = "userTokenKey";
 
+  static Future init() async =>
+      sharedPreferences = await SharedPreferences.getInstance();
+
   static Future setUserID(String uid) async {
     try {
       await sharedPreferences!.setString(_uidKey, uid);
