@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:no_name/models/user.dart';
 
+// ignore: constant_identifier_names
 const String STHWENTWRONG = "Something went wrong, please try again";
 
 class DatabaseServices {
