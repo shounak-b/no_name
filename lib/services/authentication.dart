@@ -23,13 +23,13 @@ class AuthenticationServices {
           .createUserWithEmailAndPassword(email: mail, password: pass);
       User? user = userCredential.user;
 
-      String uid = await DatabaseServices(uid: user!.uid).setUserData(UserModel(
+      await DatabaseServices(uid: user!.uid).setUserData(UserModel(
         uid: user.uid,
         name: name,
         email: mail,
       ));
 
-      return uid;
+      return user.uid;
     } catch (e) {
       print("registerWithMailPass: ${e.toString()}");
       Future.error(STHWENTWRONG);
