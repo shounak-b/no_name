@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:no_name/models/user.dart';
 
 const String STHWENTWRONG = "Something went wrong, please try again";

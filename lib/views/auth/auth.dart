@@ -9,6 +9,7 @@ class AuthenticationPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Authentication"),
       ),
+      body: const Center(child: Text("Something")),
     );
   }
 }
