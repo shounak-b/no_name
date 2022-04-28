@@ -19,6 +19,7 @@ class _SignInPageState extends State<SignInPage> {
   String _email = "";
   String _pass = "";
   bool _signingInLoading = false;
+  bool _hidePass = true;
 
   @override
   Widget build(BuildContext context) {
@@ -41,13 +42,14 @@ class _SignInPageState extends State<SignInPage> {
             decoration: const InputDecoration(
               label: Text("Password"),
             ),
+            obscureText: _hidePass,
             textInputAction: TextInputAction.done,
           ),
           const SizedBox(height: 20.0, width: 0.0),
           TextButton(
             onPressed: () async {
               if (_siFormKey.currentState!.validate()) {
-                setState(() => _signingInLoading = !_signingInLoading);
+                setState(() => _signingInLoading = true);
                 try {
                   dynamic result = await AuthenticationServices()
                       .signInWithMailPass(_email, _pass);
@@ -59,6 +61,7 @@ class _SignInPageState extends State<SignInPage> {
                 } catch (e) {
                   commonSnackbar(STHWENTWRONG, context);
                 }
+                setState(() => _signingInLoading = true);
               }
             },
             child: !_signingInLoading

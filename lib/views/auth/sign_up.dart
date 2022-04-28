@@ -21,6 +21,7 @@ class _SignUpPageState extends State<SignUpPage> {
   String _email = "";
   String _pass = "";
   bool _signingUpLoading = false;
+  bool _hidePass = true;
 
   @override
   Widget build(BuildContext context) {
@@ -51,16 +52,17 @@ class _SignUpPageState extends State<SignUpPage> {
             decoration: const InputDecoration(
               label: Text("Password"),
             ),
+            obscureText: _hidePass,
             textInputAction: TextInputAction.done,
           ),
           const SizedBox(height: 20.0, width: 0.0),
           TextButton(
             onPressed: () async {
               if (_suFormKey.currentState!.validate()) {
-                setState(() => _signingUpLoading = !_signingUpLoading);
+                setState(() => _signingUpLoading = true);
                 try {
                   dynamic result = await AuthenticationServices()
-                      .signInWithMailPass(_email, _pass);
+                      .registerWithMailPass(_name, _email, _pass);
                   if (result != null) {
                     UserSharedPref.setUserID(result);
                   } else {
@@ -69,6 +71,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 } catch (e) {
                   commonSnackbar(STHWENTWRONG, context);
                 }
+                setState(() => _signingUpLoading = false);
               }
             },
             child: !_signingUpLoading
